@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles – same robust design, colors adapted slightly */
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +19,7 @@
         }
 
         :root {
-            --primary-color: #e67e22;      /* warm tech orange – for laptop/printer vibe */
+            --primary-color: #e67e22;
             --secondary-color: #2c3e50;
             --accent-color: #e74c3c;
             --light-color: #f8f9fa;
@@ -93,7 +93,7 @@
         }
 
         .logo::before {
-            content: '💻';   /* laptop emoji – more relevant */
+            content: '💻';
             margin-right: 10px;
             font-size: 28px;
         }
@@ -434,7 +434,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(230, 126, 34, 0.9)); /* matching primary */
+            background: linear-gradient(transparent, rgba(230, 126, 34, 0.9));
             color: white;
             padding: 30px;
             transform: translateY(100%);
@@ -810,6 +810,33 @@
             transform: translateY(-5px);
         }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            color: white;
+        }
+
         /* Loading Spinner */
         .loading-spinner {
             position: fixed;
@@ -950,6 +977,14 @@
             
             .section-padding {
                 padding: 80px 0;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+                bottom: 80px;
+                right: 20px;
             }
         }
 
@@ -1253,6 +1288,9 @@
                         <div>
                             <h4>Phone / WhatsApp</h4>
                             <p>+234 813 601 7778</p>
+                            <a href="https://wa.me/2348136017778?text=Hello%20Tech%20Tribe!%20I%20need%20help%20with%20my%20laptop/printer." target="_blank" style="color: var(--primary-color); text-decoration: underline; font-size: 14px;">
+                                <i class="fab fa-whatsapp"></i> Chat with us
+                            </a>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1281,11 +1319,14 @@
                         </iframe>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Your Name" required id="name">
-                    <input type="email" placeholder="Your Email" required id="email">
-                    <input type="tel" placeholder="Your Phone" required id="phone">
-                    <select id="service" required>
+                
+                <!-- ✅ FORMSPREE FORM - YOUR URL IS NOW CONNECTED! ✅ -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mykdeklr" method="POST">
+                    <input type="hidden" name="_next" value="https://ebubearinze56-max.github.io/Business-Website/">
+                    <input type="text" name="name" placeholder="Your Name" required id="name">
+                    <input type="email" name="email" placeholder="Your Email" required id="email">
+                    <input type="tel" name="phone" placeholder="Your Phone" required id="phone">
+                    <select name="service" id="service" required>
                         <option value="">Select a service</option>
                         <option value="laptop-repair">Laptop Repair</option>
                         <option value="printer-repair">Printer Repair</option>
@@ -1293,7 +1334,7 @@
                         <option value="buy">Sell used device</option>
                         <option value="other">Other</option>
                     </select>
-                    <textarea placeholder="Describe issue or device model..." rows="5" required id="message"></textarea>
+                    <textarea name="message" placeholder="Describe issue or device model..." rows="5" required id="message"></textarea>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
@@ -1340,7 +1381,7 @@
                     <h4>Newsletter</h4>
                     <p>Get tips & offers on laptop/printer care.</p>
                     <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email" required>
+                        <input type="email" name="email" placeholder="Your email" required>
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
                     <div class="privacy-links">
@@ -1356,12 +1397,19 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2348136017778?text=Hello%20Tech%20Tribe!%20I%20need%20help%20with%20my%20laptop/printer." 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
     <script>
         // Loading Spinner
         window.addEventListener('load', () => {
@@ -1547,33 +1595,14 @@
             });
         });
 
-        // Contact Form Submission
+        // ✅ FORMSPREE CONTACT FORM - SIMPLE LOADING STATE
         const contactForm = document.getElementById('contactForm');
         if(contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
+            contactForm.addEventListener('submit', function() {
                 const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitBtn.disabled = true;
-                
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    service: document.getElementById('service').value,
-                    message: document.getElementById('message').value
-                };
-                
-                // Simulate API call – in real scenario, send to email or backend
-                setTimeout(() => {
-                    alert(`Thank you ${formData.name}! Tech Tribe will reply within 24 hours.`);
-                    this.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    console.log('Tech Tribe enquiry:', formData);
-                }, 1500);
+                // Form submits normally to Formspree
             });
         }
 
