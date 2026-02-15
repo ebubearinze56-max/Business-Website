@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Guide – Tech Tribe</title>
+    <meta name="description" content="Tech Tribe pricing for laptop and printer repair services in Choba, Rivers State. Transparent, affordable rates.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Copy all your existing styles from index.html here – same design for consistency */
+        /* For brevity, I'll include the essential styles; you can also link to a separate style.css */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --primary-color: #e67e22;
+            --secondary-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        body { font-family: 'Roboto', sans-serif; line-height:1.6; color:#555; }
+        .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+        .navbar {
+            background: #fff; box-shadow: var(--shadow); position: fixed; width:100%; top:0; z-index:1000;
+        }
+        .navbar .container { display:flex; justify-content:space-between; align-items:center; padding:20px; }
+        .logo { font-size:28px; font-weight:700; color:var(--secondary-color); text-decoration:none; display:flex; align-items:center; }
+        .logo span { color:var(--primary-color); }
+        .logo::before { content:'💻'; margin-right:10px; font-size:28px; }
+        .nav-menu { display:flex; list-style:none; }
+        .nav-menu li { margin-left:30px; }
+        .nav-menu a { text-decoration:none; color:#333; font-weight:500; transition:var(--transition); padding:5px 0; position:relative; }
+        .nav-menu a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--primary-color); transition:var(--transition); }
+        .nav-menu a:hover::after, .nav-menu a.active::after { width:100%; }
+        .nav-menu a:hover, .nav-menu a.active { color:var(--primary-color); }
+        .nav-toggle { display:none; font-size:24px; cursor:pointer; }
+        .section-padding { padding:100px 0; }
+        .section-title { text-align:center; margin-bottom:60px; }
+        .section-title h2 { font-size:36px; color:var(--secondary-color); position:relative; display:inline-block; }
+        .section-title h2::after { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:60px; height:3px; background:var(--primary-color); }
+        .btn { display:inline-block; padding:14px 32px; border-radius:5px; text-decoration:none; font-weight:500; transition:var(--transition); border:none; cursor:pointer; font-size:16px; }
+        .btn-primary { background:var(--primary-color); color:white; }
+        .btn-primary:hover { background:#d35400; transform:translateY(-3px); box-shadow:var(--shadow); }
+        .footer { background:var(--secondary-color); color:white; padding:80px 0 20px; }
+        .footer-content { display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-bottom:60px; }
+        .footer-col h3, .footer-col h4 { color:white; margin-bottom:25px; }
+        .footer-col h3 span { color:var(--primary-color); }
+        .footer-col p { opacity:0.8; line-height:1.8; }
+        .footer-col ul { list-style:none; }
+        .footer-col ul li { margin-bottom:12px; }
+        .footer-col ul li a { color:#ddd; text-decoration:none; transition:var(--transition); }
+        .footer-col ul li a:hover { color:var(--primary-color); transform:translateX(5px); }
+        .social-links { display:flex; gap:15px; margin-top:25px; }
+        .social-links a { display:inline-flex; width:40px; height:40px; background:rgba(255,255,255,0.1); border-radius:50%; color:white; align-items:center; justify-content:center; transition:var(--transition); }
+        .social-links a:hover { background:var(--primary-color); transform:translateY(-3px); }
+        .footer-bottom { text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1); color:#ddd; }
+        @media (max-width:768px) {
+            .nav-menu { position:fixed; top:70px; left:-100%; flex-direction:column; background:white; width:100%; text-align:center; transition:var(--transition); padding:40px 0; gap:25px; }
+            .nav-menu.active { left:0; }
+            .nav-toggle { display:block; }
+            .footer-content { grid-template-columns:1fr; }
+        }
+        /* Pricing specific styles */
+        .pricing-table { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; margin-top:40px; }
+        .pricing-card { background:white; border-radius:10px; box-shadow:var(--shadow); padding:30px; transition:var(--transition); border:1px solid transparent; }
+        .pricing-card:hover { transform:translateY(-10px); border-color:var(--primary-color); }
+        .pricing-card h3 { color:var(--secondary-color); margin-bottom:15px; font-size:24px; }
+        .price { font-size:36px; font-weight:700; color:var(--primary-color); margin-bottom:20px; }
+        .price small { font-size:16px; color:#999; font-weight:400; }
+        .pricing-card ul { list-style:none; margin-bottom:25px; }
+        .pricing-card ul li { padding:8px 0; border-bottom:1px dashed #eee; display:flex; align-items:center; }
+        .pricing-card ul li i { color:var(--primary-color); margin-right:10px; font-size:14px; }
+        .faq-section { margin-top:60px; }
+        .faq-item { background:var(--light-color); border-radius:10px; padding:20px; margin-bottom:15px; }
+        .faq-item h4 { color:var(--secondary-color); margin-bottom:10px; display:flex; align-items:center; }
+        .faq-item h4 i { color:var(--primary-color); margin-right:10px; }
+        .back-link { margin-top:40px; text-align:center; }
+    </style>
+</head>
+<body>
+    <!-- Navigation (copy from index.html) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Tribe</span></a>
+            <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section-padding" style="margin-top:80px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pricing Guide</h2>
+                <p>Transparent, affordable rates for common repairs</p>
+            </div>
+
+            <div class="pricing-table">
+                <!-- Laptop Repairs -->
+                <div class="pricing-card">
+                    <h3>💻 Laptop Repairs</h3>
+                    <div class="price">₦15,000 <small>starting</small></div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Screen replacement</li>
+                        <li><i class="fas fa-check-circle"></i> Keyboard replacement</li>
+                        <li><i class="fas fa-check-circle"></i> Battery replacement</li>
+                        <li><i class="fas fa-check-circle"></i> Motherboard repair</li>
+                        <li><i class="fas fa-check-circle"></i> Water damage diagnosis</li>
+                        <li><i class="fas fa-check-circle"></i> Software troubleshooting</li>
+                    </ul>
+                    <p><em>Free diagnosis with repair</em></p>
+                </div>
+
+                <!-- Printer Repairs -->
+                <div class="pricing-card">
+                    <h3>🖨️ Printer Repairs</h3>
+                    <div class="price">₦8,000 <small>starting</small></div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Roller replacement</li>
+                        <li><i class="fas fa-check-circle"></i> Printhead cleaning</li>
+                        <li><i class="fas fa-check-circle"></i> Error code fixes</li>
+                        <li><i class="fas fa-check-circle"></i> Paper jam solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Fuser repair</li>
+                        <li><i class="fas fa-check-circle"></i> Regular servicing</li>
+                    </ul>
+                    <p><em>6 months warranty on parts</em></p>
+                </div>
+
+                <!-- Sales & Buyback -->
+                <div class="pricing-card">
+                    <h3>🛒 Sales & Buyback</h3>
+                    <div class="price">Varies</div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> New laptops (HP, Dell, Lenovo, Apple)</li>
+                        <li><i class="fas fa-check-circle"></i> Used laptops – inspected & guaranteed</li>
+                        <li><i class="fas fa-check-circle"></i> Printers (Canon, Epson, Brother)</li>
+                        <li><i class="fas fa-check-circle"></i> We buy used devices – instant cash</li>
+                        <li><i class="fas fa-check-circle"></i> Trade-in available</li>
+                        <li><i class="fas fa-check-circle"></i> Free installation with purchase</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h3 style="text-align:center; margin-bottom:40px;">Frequently Asked Questions</h3>
+                
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> How long does a typical repair take?</h4>
+                    <p>Most repairs are completed within 24–48 hours. Same-day service is available for common issues like screen or battery replacement if parts are in stock.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Do you offer a warranty?</h4>
+                    <p>Yes! All repairs come with a 6-month warranty on parts and labor. Sales come with a minimum 3-month warranty on used devices.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> What brands do you repair?</h4>
+                    <p>We repair all major brands: HP, Dell, Lenovo, Apple, Acer, Asus, Toshiba, and more. For printers: Canon, Epson, Brother, HP, Samsung.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Do I need an appointment?</h4>
+                    <p>Walk-ins are welcome, but booking ahead ensures faster service. You can message us on WhatsApp to schedule a time.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Do you offer on-site support?</h4>
+                    <p>Yes, we can come to your home or office in Choba and surrounding areas. Call or WhatsApp to arrange.</p>
+                </div>
+            </div>
+
+            <div class="back-link">
+                <a href="index.html" class="btn btn-primary">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (copy from index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Tech<span>Tribe</span></h3>
+                    <p>Your local expert for laptop and printer repair, sales, and buyback. Based in Choba, serving all Rivers State.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Laptop Repair</a></li>
+                        <li><a href="index.html#services">Printer Repair</a></li>
+                        <li><a href="index.html#services">Laptop Sales</a></li>
+                        <li><a href="index.html#services">Printer Sales</a></li>
+                        <li><a href="index.html#services">We Buy Devices</a></li>
+                        <li><a href="index.html#services">On-site Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get tips & offers on laptop/printer care.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Tech Tribe (Rivers, Nigeria). All rights reserved.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Choba, Rivers State, Nigeria</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle (same as in index.html)
+        document.getElementById('navToggle').addEventListener('click', function(){
+            document.getElementById('navMenu').classList.toggle('active');
+            this.innerHTML = document.getElementById('navMenu').classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
