@@ -4,13 +4,25 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+<url>
+  <loc>https://ebubearinze56-max.github.io/Business-Website/</loc>
+  <lastmod>2026-03-07</lastmod>
+</url>
+
+<url>
+  <loc>https://ebubearinze56-max.github.io/Business-Website/services.html</loc>
+  <lastmod>2026-03-07</lastmod>
+</url>
 
 <url>
   <loc>https://ebubearinze56-max.github.io/Business-Website/pricing.html</loc>
-  <lastmod>2026-02-15</lastmod>
+  <lastmod>2026-03-07</lastmod>
 </url>
 
+<url>
+  <loc>https://ebubearinze56-max.github.io/Business-Website/thank-you.html</loc>
+  <lastmod>2026-03-07</lastmod>
+</url>
 
 </urlset>
