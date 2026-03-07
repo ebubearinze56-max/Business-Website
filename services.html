@@ -3,23 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Tech Tribe</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Our Services – Tech Tribe</title>
+    <meta name="description" content="Explore Tech Tribe services: laptop repair, printer repair, device sales, upgrades, and on-site tech support in Choba, Rivers State.">
+    <link rel="canonical" href="https://ebubearinze56-max.github.io/Business-Website/services.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #e67e22;
+            --secondary-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --text-color: #555;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        body { font-family: Arial, sans-serif; color: var(--text-color); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .navbar { background: #fff; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 10; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; }
+        .logo { color: var(--secondary-color); text-decoration: none; font-size: 1.6rem; font-weight: 700; }
+        .logo span { color: var(--primary-color); }
+        .nav-menu { display: flex; list-style: none; gap: 18px; }
+        .nav-menu a { text-decoration: none; color: #333; font-weight: 600; }
+        .nav-menu a.active, .nav-menu a:hover { color: var(--primary-color); }
+        .hero { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; padding: 72px 0; text-align: center; }
+        .hero h1 { font-size: 2.4rem; margin-bottom: 10px; }
+        .section { padding: 70px 0; }
+        .section h2 { color: var(--secondary-color); text-align: center; margin-bottom: 10px; }
+        .section p.lead { text-align: center; max-width: 720px; margin: 0 auto 30px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .service-card { border: 1px solid #eee; border-radius: 10px; padding: 24px; box-shadow: var(--shadow); }
+        .service-card i { font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px; }
+        .service-card h3 { color: var(--secondary-color); margin-bottom: 10px; }
+        .service-card ul { padding-left: 18px; }
+        .cta { text-align: center; background: var(--light-color); padding: 50px 20px; border-radius: 10px; }
+        .btn { display: inline-block; margin-top: 16px; background: var(--primary-color); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; }
+        .footer { background: var(--secondary-color); color: #fff; padding: 40px 0 20px; margin-top: 60px; }
+        .footer a { color: #fff; }
+        .footer-bottom { text-align: center; opacity: .9; }
+        @media (max-width: 768px) {
+            .navbar .container { flex-direction: column; gap: 10px; }
+            .nav-menu { flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Copy your navigation bar from index.html here -->
-    <nav class="navbar"> ... </nav>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html#home" class="logo">Tech<span>Tribe</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="section-padding" style="margin-top: 100px;">
+    <header class="hero">
         <div class="container">
             <h1>Our Services</h1>
-            <p>Here are all the services we offer at Tech Tribe...</p>
-            <!-- You can copy your services grid from index.html -->
+            <p>Reliable laptop and printer support for homes, students, offices, and businesses in Choba and nearby areas.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2>What We Do</h2>
+            <p class="lead">Every job starts with a clear diagnosis and transparent pricing. We explain the issue, show your options, and complete repairs with tested parts.</p>
+            <div class="services-grid">
+                <article class="service-card">
+                    <i class="fas fa-laptop-medical"></i>
+                    <h3>Laptop Repair</h3>
+                    <ul>
+                        <li>Screen, keyboard, hinge, charging port fixes</li>
+                        <li>Battery replacement and overheating repair</li>
+                        <li>Motherboard-level diagnostics</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-print"></i>
+                    <h3>Printer Repair</h3>
+                    <ul>
+                        <li>Paper jam, roller, and printhead issues</li>
+                        <li>Ink system cleaning and calibration</li>
+                        <li>Network and wireless setup</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Device Sales</h3>
+                    <ul>
+                        <li>Quality laptops and printers</li>
+                        <li>Budget-friendly options for students</li>
+                        <li>Business-ready systems for offices</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Upgrades & Maintenance</h3>
+                    <ul>
+                        <li>SSD and RAM upgrades</li>
+                        <li>OS installation and software cleanup</li>
+                        <li>Preventive maintenance plans</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>We Buy Used Devices</h3>
+                    <ul>
+                        <li>Fast device evaluation</li>
+                        <li>Fair market pricing</li>
+                        <li>Immediate payment after agreement</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>On-site Support</h3>
+                    <ul>
+                        <li>Home and office visits in nearby areas</li>
+                        <li>Setup, troubleshooting, and maintenance</li>
+                        <li>Ideal for teams and small businesses</li>
+                    </ul>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- Copy your footer from index.html here -->
-    <footer class="footer"> ... </footer>
+    <section class="section">
+        <div class="container">
+            <div class="cta">
+                <h2>Need Help Right Away?</h2>
+                <p>Send us your issue details and device model. We usually respond within 24 hours.</p>
+                <a class="btn" href="https://wa.me/2348136017778?text=Hello%20Tech%20Tribe!%20I%20need%20help%20with%20my%20device." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Tech Tribe, Choba Rivers State, Nigeria.</p>
+            <p><a href="tel:+2348136017778">+234 813 601 7778</a> · <a href="mailto:chiagozielamarinze@gmail.com">chiagozielamarinze@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
